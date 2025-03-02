@@ -1,0 +1,81 @@
+<!DOCTYP HTML>
+	<html>
+
+	<head>
+		<title>Web Residency</title>
+		<style>
+			#links {
+				position: fixed;
+				top: 20;
+				left: 30;
+				color: white;
+				font-size: 24px;
+				padding: 10px;
+				z-index: 1000;
+			}
+
+			#myVideo {
+				position: fixed: top: 0;
+				left: 0;
+				z-index: 0;
+			}
+		</style>
+
+
+	</head>
+
+	<body>
+
+
+		<div id="myVideo"></div>
+		<div id="links"></div>
+
+		<script src="https://player.vimeo.com/api/player.js"></script>
+
+		<script>
+			// Reference to the container where links will be displayed
+			var linkHouse = document.getElementById('links');
+
+			// Load JSON data
+			fetch('data.json')
+				.then(response => response.json())
+				.then(links => {
+					var options = {
+						url: "https://player.vimeo.com/video/76979871?h=8272103f6e",
+						width: 800
+					};
+
+					var videoPlayer = new Vimeo.Player('myVideo', options);
+
+					videoPlayer.on('play', function () {
+						console.log('Played the video');
+					});
+
+					// Track current active link
+					let currentLink = null;
+
+					videoPlayer.on('timeupdate', function (data) {
+						let currentTime = data.seconds;
+
+						// Check for a link that should be active
+						for (let link of links) {
+							if (currentTime >= link.time && currentTime < link.time + 3) {
+								if (currentLink !== link.url) {  // Prevent redundant updates
+									linkHouse.innerHTML = `<a href="${link.link}" target="_blank">${link.content}</a>`;
+									console.log(link.content);
+									currentLink = link.url;
+								}
+								return; // Stop checking once the right link is found
+							}
+						}
+
+						// If no link is active, clear the displayed link
+						linkHouse.innerHTML = "";
+						currentLink = null;
+					});
+				})
+				.catch(error => console.error('Error loading JSON:', error));
+		</script>
+	</body>
+
+	</html>
