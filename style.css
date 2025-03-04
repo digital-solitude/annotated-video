@@ -1,0 +1,107 @@
+/* 1) Keep your existing styling for html/body and #myVideo container */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background: black;
+    /* letterbox area */
+}
+
+#myVideo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    /* ensures letterbox bars are black if needed */
+    overflow: hidden;
+}
+
+/* The actual <video> is #videoElement. 
+   We make it fill #myVideo with "contain" letterboxing. */
+#myVideo #videoElement {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* The #links overlay for timed links */
+#links {
+    position: fixed;
+    top: 20px;
+    left: 30px;
+    color: white;
+    font-size: 24px;
+    padding: 10px;
+    z-index: 1000;
+}
+
+/* -----------------------------------
+   NEW STYLES for Notes Icon + Modal
+------------------------------------ */
+#iconWrapper {
+    position: fixed;
+    bottom: 10%;
+    right: 20px;
+    z-index: 2000;
+    /* above #links */
+    cursor: pointer;
+}
+
+#notesIcon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #333;
+    object-fit: cover;
+}
+
+#notesIcon:hover {
+    width: 60px;
+    height: 60px;
+}
+
+#notesModal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    width: 300px;
+    padding: 1rem;
+    display: none;
+    /* hidden by default */
+    z-index: 3000;
+    border-radius: 8px;
+}
+
+#notesModal textarea {
+    width: 100%;
+    height: 150px;
+    resize: none;
+    margin-bottom: 1rem;
+    font-size: 16px;
+    padding: 4px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttons button {
+    background: #666;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.buttons button:hover {
+    background: #888;
+}
