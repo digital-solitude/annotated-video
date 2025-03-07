@@ -5,7 +5,7 @@ const myVideoDiv = document.getElementById('myVideo');
 // Create the <video> element
 const videoEl = document.createElement('video');
 videoEl.id = 'videoElement';
-videoEl.src = 'video.mp4';   // Your H.264 MP4 path
+videoEl.src = 'h264.mp4';   // Your H.264 MP4 path
 videoEl.controls = true;
 videoEl.autoplay = false;
 videoEl.muted = false;
