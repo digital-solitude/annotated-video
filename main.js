@@ -87,8 +87,10 @@ buttonsDiv.appendChild(emailBtn);
 notesIcon.addEventListener('click', () => {
     if (notesModal.style.display === 'none' || notesModal.style.display === '') {
         notesModal.style.display = 'block';
+        notesIcon.src = 'notes-close.png'; // Change icon to close
     } else {
         notesModal.style.display = 'none';
+        notesIcon.src = 'notes.png'; // Change icon back to notes
     }
 });
 

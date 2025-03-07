@@ -1,19 +1,71 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-	<title>Web Residency</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sharp Rotation: IYKYK</title>
+    <style>
+        @font-face {
+            font-family: 'Focus Sans';
+            src: url('path-to-focus-sans.woff2') format('woff2'),
+                url('path-to-focus-sans.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'Focus Sans', sans-serif;
+            background-color: black;
+            color: #FFD700;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: left;
+            align-items: left;
+            height: 100vh;
+            text-align: left;
+            font-size: 16px;
+            line-height: 1.5em;
+        }
+
+        a {
+            color: #FFD700;
+            text-decoration: overline;
+        }
+
+        .container {
+            max-width: 800px;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+        }
+    </style>
 </head>
 
 <body>
-
-	<div id="myVideo"></div>
-
-	<div id="links"></div>
-
-	<script src="main.js"></script>
-
+    <div class="container">
+        <h1>Welcome to Sharp Rotation: IYKYK</h1>
+        <p>An essay film by Devin Kenny.</p>
+        <p>This interactive viewing experience is designed to deepen engagement with the film’s themes and references.
+            As you watch, you will have access to:</p>
+        <ol>
+            <li><strong>Linked Source Material</strong> – Clickable references appear throughout the film, allowing you
+                to explore key texts, images, and media in real time.</li>
+            <li><strong>Notes & Reflections</strong> – A dedicated text section enables you to jot down thoughts,
+                questions, and ideas—whether for personal reflection or to share with others.</li>
+            And on this page you will find a
+            <li><strong>Visual Bibliography</strong> – A
+                curated collection of images and sources to further your <a
+                    href="https://www.are.na/devin-kenny/sharp-rotation">exploration</a>.</li>
+        </ol>
+        <p>As a nonlinear work, you are encouraged to pause and navigate the film at your own pace. This experience is
+            best viewed on a desktop, laptop, or via video projection.</p>
+        <p><a href="video.html">Enjoy</a> the journey.</p>
+    </div>
 </body>
 
 </html>
