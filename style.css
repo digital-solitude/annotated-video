@@ -1,3 +1,6 @@
+* {
+    box-sizing: border-box;
+}
 /* 1) Keep your existing styling for html/body and #myVideo container */
 html,
 body {
@@ -107,21 +110,62 @@ body {
     background: #888;
 }
 
-/* New section below the video */
 #bottom {
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 10%;
+    max-height: 200px;
     background: #222;
     color: white;
-    text-align: center;
     z-index: 500;
+    overflow-y: auto;
+    padding: 15px 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
-#bottom h1 {}
+.bottom-content {
+    max-width:25%;
+    padding:0 1em;
+    /* align to bottom */
+    align-self: flex-end;
+}
+
+#bottom p {
+    font-size: 1em;
+    margin: 0;
+}
+
+#bottom h1 {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+#bottom h2 {
+    font-size: 1em;
+    font-weight: bold;
+}
 
 #bottom a {
     color: #FFD700;
     text-decoration: overline;
+}
+
+/* Add media query just for the stacking behavior */
+@media screen and (max-width: 1400px) {
+    .bottom-content {
+        max-width: 33%;
+        margin-bottom: 1em;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .bottom-content {
+        max-width: 50%;
+    }
+}
+@media screen and (max-width: 768px) {
+    .bottom-content {
+        max-width: 100%;
+    }
 }
