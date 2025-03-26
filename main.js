@@ -32,6 +32,7 @@ fetch('data.json')
                 if (currentTime >= link.time && currentTime < (link.time + 3)) {
                     if (currentLink !== link.url) {
                         linkHouse.innerHTML = `<a href="${link.link}" target="_blank">${link.content}</a>`;
+                        linkHouse.style.backgroundColor = 'rgba(255, 255, 255, .5)';
                         currentLink = link.url;
                         // Pause the video when a link is clicked
                         linkHouse.querySelector('a').addEventListener('click', () => {
@@ -42,6 +43,7 @@ fetch('data.json')
                 }
             }
             linkHouse.innerHTML = '';
+            linkHouse.style.backgroundColor = 'transparent';
             currentLink = null;
         });
     })
@@ -125,5 +127,5 @@ emailBtn.addEventListener('click', () => {
     const textContent = notesTextarea.value;
     const subject = 'My Notes';
     const mailtoLink = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(textContent + emailSignature)}`;
-    window.location.href = mailtoLink;
+    window.open(mailtoLink, '_blank');
 });

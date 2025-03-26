@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
 }
+
 /* 1) Keep your existing styling for html/body and #myVideo container */
 html,
 body {
@@ -9,6 +10,7 @@ body {
     height: 100%;
     width: 100%;
     background: black;
+    font-family: 'Arial', sans-serif;
     /* letterbox area */
 }
 
@@ -129,8 +131,8 @@ body {
 }
 
 .bottom-content {
-    max-width:25%;
-    padding:0 1em;
+    max-width: 25%;
+    padding: 0 1em;
     /* align to bottom */
     align-self: flex-end;
     font-size: .9em;
@@ -163,11 +165,13 @@ body {
         margin-bottom: 1em;
     }
 }
+
 @media screen and (max-width: 1200px) {
     .bottom-content {
         max-width: 50%;
     }
 }
+
 @media screen and (max-width: 768px) {
     .bottom-content {
         max-width: 100%;
